@@ -334,6 +334,26 @@ public:
     std::ostream& output(std::ostream& os) const;
 
     // Math Functions
+    friend const mpreal add (const mpreal& a, const mpreal& b, mp_rnd_t rnd_mode) {
+        mpreal result;
+        mpfr_add(result.mp,a.mp,b.mp,rnd_mode);
+        return result;
+    }
+        friend const mpreal sub (const mpreal& a, const mpreal& b, mp_rnd_t rnd_mode) {
+            mpreal result;
+            mpfr_sub(result.mp,a.mp,b.mp,rnd_mode);
+            return result;
+        }
+        friend const mpreal mul (const mpreal& a, const mpreal& b, mp_rnd_t rnd_mode) {
+            mpreal result;
+            mpfr_mul(result.mp,a.mp,b.mp,rnd_mode);
+            return result;
+        }
+        friend const mpreal div (const mpreal& a, const mpreal& b, mp_rnd_t rnd_mode) {
+            mpreal result;
+            mpfr_mul(result.mp,a.mp,b.mp,rnd_mode);
+            return result;
+        }
     friend const mpreal sqr (const mpreal& v, mp_rnd_t rnd_mode);
     friend const mpreal sqrt(const mpreal& v, mp_rnd_t rnd_mode);
     friend const mpreal sqrt(const unsigned long int v, mp_rnd_t rnd_mode);
